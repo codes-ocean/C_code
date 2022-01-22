@@ -1,3 +1,6 @@
+/*配列を用意し、10個の整数値の入力に対して2分探索木を作るプログラム。
+一つ入力するたびに配列を表示する。
+データを中間順に走査し、訪問順に出力する。*/
 #include<stdio.h>
 int data[11], l[11], r[11];
 
@@ -31,30 +34,30 @@ main()
 		}
 		p = l[0];
 		//printf("2:%d\n", p);
-		while (1)	//�������[�v
+		while (1)	//無限ループ
 		{
-			if (data[i] <= data[p])		//x��data[p] && x<data[p]
+			if (data[i] <= data[p])		//x＝data[p] && x<data[p]
 			{
-				if (l[p] == -1)			//�q����
+				if (l[p] == -1)			//子が空
 				{
 					l[p] = i;		//tuika
 					break;				//nuke
 				}
 				else {
-					p = l[p];			//�X�V
+					p = l[p];			//更新
 					//printf("3:%d\n", p);
 					continue;
 				}
 			}
 			if (data[p] < data[i])		//x>data[p]
 			{
-				if (r[p] == -1)			//�q����
+				if (r[p] == -1)			//子が空
 				{
 					r[p] = i;		//tuika
 					break;				//nuke
 				}
 				else {
-					p = r[p];			//�X�V
+					p = r[p];			//更新
 					//printf("4:%d\n", p);
 					continue;
 				}
